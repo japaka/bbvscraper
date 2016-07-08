@@ -1,0 +1,16 @@
+{
+  "name": "bbv-scraper",
+  "version": "0.0.0",
+  "description": "Scrapes the bbv-website for stats",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "japaka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "cheerio": "^0.20.0",
+    "request": "^2.69.0"
+  }
+}
