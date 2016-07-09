@@ -43,18 +43,21 @@ function getSchedule(team){
         })
       })
     }
+    saveFile("./teams/" + team.name, "schedule.json", schedule);
+  });
+}
+
+function saveFile(location, filename, content){
     fs.writeFile(
-      "./teams/" + team.name + "/schedule.json",
-      JSON.stringify(schedule),
+      location + "/" + filename,
+      JSON.stringify(content),
       function(err){
         if(err){
           console.log(err);
         }else{
-          console.log("Written file:'./teams/" + team.name + "/schedule.json'");
+          console.log("Written file: " + location + "/" + filename);
         }
       }
     );
-  });
 }
-
 module.exports.getSchedule = getSchedule;
