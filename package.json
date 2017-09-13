@@ -9,8 +9,8 @@
   "author": "japaka",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
     "cheerio": "^0.20.0",
+    "mkdirp": "^0.5.1",
     "request": "^2.69.0"
   }
 }

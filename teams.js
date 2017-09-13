@@ -1,32 +1,31 @@
 var teams = [{
   "name" : "damen1",
-  "liga_id" : 19042
+  "liga_id" : 21803
 },{
   "name" : "herren1",
-  "liga_id" : 19040
+  "liga_id" : 22874
 },{
   "name" : "damen2",
-  "liga_id" : 19702
+  "liga_id" : 22879
 },{
-  "name" : "u17w",
-  "liga_id" : 20342
+  "name" : "u18w",
+  "liga_id" : 23587
 },{
-  "name" : "u15w",
-  "liga_id" : 20344
+  "name" : "u16w",
+  "liga_id" : 23590
 },{
   "name" : "u40",
-  "liga_id" : 20572
+  "liga_id" : 22667
 },{
-  "name" : "u18m",
-  "liga_id" : "20574"
-},
-{
-  "name" : "u16m",
-  "liga_id" : "20577"
+  "name" : "u16m1",
+  "liga_id" : 22671
+},{
+  "name" : "u16m2",
+  "liga_id" : 22675
 },
 {
   "name" : "u14m",
-  "liga_id" : "20579"
+  "liga_id" : "23637"
 },
 {
   "name" : "u14w",
@@ -34,15 +33,16 @@ var teams = [{
 },
 {
   "name" : "u121",
-  "liga_id" : "20581"
-},
-{
-  "name" : "u10",
-  "liga_id" : "20907"
+  "liga_id" : "22673"
 },
 {
   "name" : "u122",
-  "liga_id" : "20587"
+  "liga_id" : "22676"
+},
+{
+  "name" : "u10",
+  "liga_id" : "23777"
+
 }
 ];
 module.exports = teams;

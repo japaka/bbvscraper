@@ -5,6 +5,9 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
 var request = require('request');
+var mkdirp = require('mkdirp');
+
+var teams = require('./teams.js');
 
 /**
  * Standard URLS auf der BBV-Online Seite */
@@ -48,16 +51,27 @@ function getSchedule(team){
 }
 
 function saveFile(location, filename, content){
-    fs.writeFile(
-      location + "/" + filename,
-      JSON.stringify(content),
-      function(err){
-        if(err){
-          console.log(err);
-        }else{
-          console.log("Written file: " + location + "/" + filename);
+  mkdirp(location, (err) => {
+    if(err){
+      console.log(err);
+    }else{
+      fs.writeFile(
+        location + "/" + filename,
+        JSON.stringify(content),
+        function(err){
+          if(err){
+            console.log(err);
+          }else{
+            console.log("Written file: " + location + "/" + filename);
+          }
         }
-      }
-    );
+      );
+    }
+  })
 }
+
+teams.forEach(function(team){
+  getSchedule(team);
+});
+
 module.exports.getSchedule = getSchedule;
