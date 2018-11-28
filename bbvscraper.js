@@ -36,17 +36,21 @@ function getSchedule(team){
       games.splice(0,1);
       games.each(function(i){
         var game = $(this);
-        schedule.push({
-          "nr" : game.children("td:nth-child(1)").text().trim(),
-          "gameday" : game.children("td:nth-child(2)").text().trim(),
-          "date" : game.children("td:nth-child(3)").text().trim(),
-          "home" : game.children("td:nth-child(4)").text().trim(),
-          "guest" : game.children("td:nth-child(5)").text().trim(),
-          "location" : game.children("td:nth-child(6)").text().trim()
-        })
+        var home = game.children("td:nth-child(4)").text().trim().replace(/TuS Fürstenfeldbruck/, team.name);
+        var guest = game.children("td:nth-child(5)").text().trim().replace(/TuS Fürstenfeldbruck/,team.name);
+        if(home == team.name || guest == team.name){
+          schedule.push({
+            "nr" : game.children("td:nth-child(1)").text().trim(),
+            "gameday" : game.children("td:nth-child(2)").text().trim(),
+            "date" : game.children("td:nth-child(3)").text().trim(),
+            "home" : home,
+            "guest" : guest,
+            "location" : game.children("td:nth-child(6)").text().trim()
+          })
+        }
       })
     }
-    saveFile("./teams/" + team.name, "schedule.json", schedule);
+    saveFile("./teams/" + team.id, "schedule.json", schedule);
   });
 }
 
@@ -74,4 +78,17 @@ teams.forEach(function(team){
   getSchedule(team);
 });
 
+function createCompleteSchedule(){
+  let completeSchedule = [];
+  teams.forEach((team) => {
+    let teamSchedule = require("./teams/" + team.id + "/schedule.json");
+    let leString = JSON.stringify(teamSchedule);
+    leString.replace(/TuS Fürstenfeldbruck/g, team.name);
+    console.log(team.name);
+    teamSchedule = JSON.parse(leString);
+    completeSchedule.push({"team" : team.id, "games" : teamSchedule});
+  });
+  saveFile("./data", "completeSchedule.json", completeSchedule);
+}
+//createCompleteSchedule();
 module.exports.getSchedule = getSchedule;
