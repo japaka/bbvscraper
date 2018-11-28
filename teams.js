@@ -1,45 +1,50 @@
 var teams = [{
-  "name" : "damen1",
-  "liga_id" : 21803
+  "id" : "damen1",
+  "name" : "Damen 1",
+  "liga_id" : 25932
 },{
-  "name" : "herren1",
-  "liga_id" : 22874
-},{
-  "name" : "damen2",
-  "liga_id" : 22879
-},{
+  "id" : "u18w",
   "name" : "u18w",
-  "liga_id" : 23587
+  "liga_id" : 25807
 },{
+  "id" : "u16w",
   "name" : "u16w",
-  "liga_id" : 23590
+  "liga_id" : 25809
 },{
+  "id" : "u40",
   "name" : "u40",
-  "liga_id" : 22667
+  "liga_id" : 25842
 },{
-  "name" : "u16m1",
-  "liga_id" : 22671
+  "id" : "u18m",
+  "name" : "u18m",
+  "liga_id" : 25833
 },{
-  "name" : "u16m2",
-  "liga_id" : 22675
+  "id" : "u14m1",
+  "name" : "u14m1",
+  "liga_id" : 25835
 },
 {
-  "name" : "u14m",
-  "liga_id" : "23637"
+  "id" : "u12m",
+  "name" : "u12m",
+  "liga_id" : "25836"
 },
 {
-  "name" : "u14w",
-  "liga_id" : "20580"
+  "id" : "u10",
+  "name" : "u10",
+  "liga_id" : "26004"
 },
 {
-  "name" : "u121",
-  "liga_id" : "22673"
+  "id" : "u16m",
+  "name" : "u16m",
+  "liga_id" : "25837"
 },
 {
-  "name" : "u122",
-  "liga_id" : "22676"
+  "id" : "u14m2",
+  "name" : "u14m2",
+  "liga_id" : "26605"
 },
 {
+  "id" : "u10",
   "name" : "u10",
   "liga_id" : "23777"
 
